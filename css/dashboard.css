@@ -1,0 +1,319 @@
+/* --- Brand Colors (Stone & Amber Suite) --- */
+        :root {
+            --bg-stone-900: #1c1917;
+            --bg-stone-800: #292524;
+            --border-stone-700: #44403c;
+            --text-light: #f5f5f4;
+            --text-muted: #d6d3d1;
+            --amber-gold: #f59e0b;
+            --amber-muted: #d97706;
+            --status-green: #10b981;
+            --status-red: #ef4444;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            color: var(--text-muted);
+            background-color: var(--bg-stone-900);
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        /* 1.GRID LAYOUT SYSTEM */
+
+        .app-container {
+            display: grid;
+            grid-template-columns: 280px 1fr 300px;
+            grid-template-rows: 70px minmax(calc(100vh - 180px), auto) 50px;
+            gap: 1.25rem;
+            max-width: 1600px;
+            margin: 0 auto;
+            grid-template-areas: 
+            "header header header"
+            "side main rail"
+            "foot foot foot"
+            ;
+        }
+
+        .app-header {
+            grid-area: header;
+        }
+
+        .app-sidebar {
+            grid-area: side;
+        }
+
+        .app-main {
+            grid-area: main;
+        }
+
+        .app-right-rail {
+            grid-area: rail;
+        }
+        .app-footer {
+            grid-area: foot;
+        }
+        /* ===================================================
+           3. APPLICATION COMPONENT STYLING
+           =================================================== */
+        
+        /* --- Header --- */
+        .app-header {
+            background-color: var(--bg-stone-800);
+            border: 1px solid var(--border-stone-700);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+        }
+
+        .brand-zone {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--text-light);
+            letter-spacing: 0.5px;
+        }
+
+        .brand-zone span { color: var(--amber-gold); }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--status-green);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--status-green);
+            border-radius: 50%;
+        }
+
+        /* --- Navigation Sidebar --- */
+        .app-sidebar {
+            background-color: var(--bg-stone-800);
+            border: 1px solid var(--border-stone-700);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .menu-group-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--amber-gold);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-links a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 0.6rem 0.75rem;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover, .nav-links li.active a {
+            background-color: var(--bg-stone-900);
+            color: var(--text-light);
+            border-left: 3px solid var(--amber-gold);
+        }
+
+        /* --- Main Workspace (Dynamic Content Grid) --- */
+        .app-main {
+            background-color: rgba(28, 25, 23, 0.4);
+            border: 1px solid var(--border-stone-700);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .workspace-header h1 {
+            color: var(--text-light);
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        /* Inside Main: Internal Component Cards */
+        .metrics-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .metric-card {
+            background-color: var(--bg-stone-800);
+            border: 1px solid var(--border-stone-700);
+            border-radius: 6px;
+            padding: 1.25rem;
+        }
+
+        .metric-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin: 0.25rem 0;
+        }
+
+        .metric-value span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--amber-gold);
+        }
+
+        .data-table-container {
+            background-color: var(--bg-stone-800);
+            border: 1px solid var(--border-stone-700);
+            border-radius: 6px;
+            padding: 1.25rem;
+            flex-grow: 1;
+        }
+
+        .data-table-container h3 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .data-table th, .data-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border-stone-700);
+        }
+
+        .data-table th {
+            color: var(--text-light);
+            font-weight: 600;
+            background-color: rgba(0,0,0,0.1);
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .pill.success { background-color: rgba(16, 185, 129, 0.15); color: var(--status-green); }
+        .pill.warning { background-color: rgba(245, 158, 11, 0.15); color: var(--amber-gold); }
+
+        /* --- Right Utility Rail (Activity / Feed) --- */
+        .app-right-rail {
+            background-color: var(--bg-stone-800);
+            border: 1px solid var(--border-stone-700);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .app-right-rail h3 { color: var(--text-light); font-size: 1.1rem; }
+
+        .activity-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .feed-item {
+            border-left: 2px solid var(--border-stone-700);
+            padding-left: 0.75rem;
+            font-size: 0.85rem;
+        }
+
+        .feed-item .time {
+            font-size: 0.75rem;
+            color: var(--amber-gold);
+            display: block;
+            margin-bottom: 0.15rem;
+        }
+
+        .feed-item p { color: var(--text-light); font-weight: 500; }
+
+        /* --- Footer --- */
+        .app-footer {
+            background-color: var(--bg-stone-800);
+            border: 1px solid var(--border-stone-700);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+            font-size: 0.8rem;
+        }
+
+@media(max-width: 1200px) {
+    .app-container {
+        grid-template-columns: 240px 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "header header"
+        "side main"
+        "rail main"
+        "foot foot";
+    }
+}        
+
+@media (max-width: 768px) {
+    app-container {
+                /* Stack all core cells into a unified linear sequence */
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                    "head"
+                    "side"
+                    "main"
+                    "rail"
+                    "foot";
+            }
+            .matrics-row {
+                grid-template-columns: 1fr;
+            }
+}

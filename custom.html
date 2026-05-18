@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Variables</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <style>
+        /* :root{
+            --main-bg-color: lightblue;
+            --main-text-color: darkblue;
+        }
+        body {
+            background-color: var(--main-bg-color);
+            color: var(--main-text-color), black;
+            --button-bg: blue;
+            --button-text: white;
+            --button-padding: 10px 20px;
+            --button-radius: 8px;
+        }
+        button {
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            padding: var(--button-padding);
+            border-radius: var(--button-radius);
+        } */
+    </style>
+</head>
+<body>
+    <h1>Welcome to Custom sytles</h1>
+    <button>SUBMIT</button>
+    <div class="app-container">
+        
+        <!-- Header Zone -->
+        <header class="app-header">
+            <div class="brand-zone">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                APEX<span>OPS</span>
+            </div>
+            <div class="user-profile">
+                <div class="status-badge">
+                    <div class="status-dot"></div>
+                    Cluster: Ke-Nrb-01
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="app-sidebar">
+            <div>
+                <div class="menu-group-title">Core Compute</div>
+                <ul class="nav-links">
+                    <li class="active"><a href="#">Infrastructure Mapping</a></li>
+                    <li><a href="#">Virtual Nodes</a></li>
+                    <li><a href="#">Security Groups</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="menu-group-title">Telemetry</div>
+                <ul class="nav-links">
+                    <li><a href="#">Performance Logs</a></li>
+                    <li><a href="#">Resource Quotas</a></li>
+                    <li><a href="#">Alert Pipelines</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="app-main">
+            <div class="workspace-header">
+                <h1>Infrastructure Mapping</h1>
+                <p>Real-time status overview of continuous deployment vectors.</p>
+            </div>
+
+            <!-- Dashboard Sub-Metrics Row -->
+            <div class="metrics-row">
+                <div class="metric-card">
+                    <div class="metric-title">Total Active Nodes</div>
+                    <div class="metric-value">42 <span>/ 50 Max</span></div>
+                    <p style="font-size: 0.8rem; color: var(--status-green);">↑ 4 nodes spawned over past 24h</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-title">Memory Allocation</div>
+                    <div class="metric-value">78.4%</div>
+                    <p style="font-size: 0.8rem; color: var(--amber-gold);">Optimal cluster footprint</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-title">Network Ingress</div>
+                    <div class="metric-value">1.2 <span>Gb/s</span></div>
+                    <p style="font-size: 0.8rem; color: var(--status-green);">Stable data flow baseline</p>
+                </div>
+            </div>
+
+            <!-- Main Interactive Data Table -->
+            <div class="data-table-container">
+                <h3>Managed Cluster Microservices</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Deployment ID</th>
+                            <th>Target Namespace</th>
+                            <th>Resource Footprint</th>
+                            <th>Lifecycle Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>srv-auth-prod</code></td>
+                            <td>production-us-east</td>
+                            <td>4 Cores / 8GB</td>
+                            <td><span class="pill success">Healthy</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>srv-gateway-edge</code></td>
+                            <td>edge-global-nrb</td>
+                            <td>8 Cores / 16GB</td>
+                            <td><span class="pill success">Healthy</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>srv-payment-process</code></td>
+                            <td>pci-isolated-zone</td>
+                            <td>4 Cores / 12GB</td>
+                            <td><span class="pill warning">Syncing</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>srv-analytics-agg</code></td>
+                            <td>data-lakehouse</td>
+                            <td>16 Cores / 64GB</td>
+                            <td><span class="pill success">Healthy</span></td>
+                        </tr>
+                    </tbody>
+                    </table>
+            </div>
+        </main>
+
+        <!-- Right System Activity Rail -->
+        <aside class="app-right-rail">
+            <h3>Deployment Logs</h3>
+            <div class="activity-feed">
+                <div class="feed-item">
+                    <span class="time">10:48 AM</span>
+                    <p>Replica set scaling triggered for <code>srv-gateway-edge</code>.</p>
+                </div>
+                <div class="feed-item">
+                    <span class="time">09:15 AM</span>
+                    <p>Security group validation scan completed cleanly.</p>
+                </div>
+                <div class="feed-item" style="border-left-color: var(--amber-gold);">
+                    <span class="time">08:02 AM</span>
+                    <p>Resource saturation warning: <code>srv-analytics-agg</code> reached 88% memory ceiling.</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- System Footer -->
+        <footer class="app-footer">
+            <div>API Engine Version: <code>v3.14.2-build.884</code></div>
+            <div>System Diagnostics Node: <strong>Operational</strong></div>
+        </footer>
+
+    </div>
+</body>
+</html>

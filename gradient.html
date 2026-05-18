@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradients</title>
+    <style>
+      .gradient {
+        background: linear-gradient(to right, green, yellow, red);
+        height: 70px;
+        width: 100%;
+        border-radius: 8px;
+      }
+      .gradient1 {
+        background: radial-gradient(at 0% 50%, green 30px, yellow 60px);
+        height: 70px;
+        width: 100%;
+        border-radius: 8px;
+      }
+      .animation {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        animation: changeColor 3s infinite;
+        margin: 5px;
+      }
+
+      @keyframes changeColor {
+        0% {
+          background-color: blue;
+        }
+        50% {
+          background-color: red;
+        }
+        100% {
+          background-color: yellow;
+        }
+      }
+      .slider {
+        width: 600px;
+        height: 400px;
+        overflow: hidden;
+        margin: auto;
+      }
+      .slides {
+        display: flex;
+      }
+      .slides img {
+        width: 600px;
+        height: 400px;
+        object-fit: cover;
+      }
+      .slides {
+        display: flex;
+        width: 400%;
+        height: 100%;
+        animation: slide 12s infinite;
+      }
+      @keyframes slide {
+        0% {
+          transform: translateX(0);
+        }
+
+        25% {
+          transform: translateX(0);
+        }
+
+        30% {
+          transform: translateX(-600px);
+        }
+
+        50% {
+          transform: translateX(-600px);
+        }
+
+        55% {
+          transform: translateX(-1200px);
+        }
+
+        75% {
+          transform: translateX(-1200px);
+        }
+
+        80% {
+          transform: translateX(-1800px);
+        }
+
+        100% {
+          transform: translateX(-1800px);
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="gradient"></div>
+    <div class="gradient1"></div>
+    <div class="animation"></div>
+
+    <div class="slider">
+      <div class="slides">
+        <img src="assets/images/Gaming-laptop.jpg" alt="Gaming-laptop" />
+        <img src="assets/images/Smartphone.jpg" alt="Smartphone" />
+        <img
+          src="assets/images/wireless-headphones.jpg"
+          alt="wireless-headphones"
+        />
+        <img src="assets/images/laptop.jpg" alt="laptop" />
+      </div>
+    </div>
+  </body>
+</html>

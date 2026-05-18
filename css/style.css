@@ -39,7 +39,7 @@ button {
 }
 
 body {
-    background-color: black;
+    background-color: rgb(245, 165, 225);
     color: azure;
 }
 
@@ -67,20 +67,66 @@ a {
 }
 /*ID selectors*/
 
-#portfolio {
+/*#portfolio {
     border: 4px dotted green;
+}*/
+.content section {
+    border: 1px solid red;
 }
 
 /*Attribute Selector*/
 a[href]{
-    color: chartreuse;
+    color: rgb(64, 83, 252);
 }
 /*Descendant selector*/
 div h4 {
     color: red;
 }
+div ul li {
+    color: blue;
+}
+
 /* child selector*/
 div > p {
-    color: green;
+    color: rgb(17, 248, 67);
 
+}
+/* Adjacent sibling selector*/
+h4 + nav {
+    background-color: green;
+    color: black;
+    align-items: end;
+}
+/* General sibling selector*/
+h3 ~ p {
+    color:gray;
+} 
+/* Grouping selector*/
+h2,h3,h4 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+}
+
+/*Interactive state pseudo-classes*/
+.cta-btn:hover {
+    background-color:brown;
+    color: white;
+}
+.cta-btn:active {
+    background-color: rgb(222, 238, 5);
+    color: white;
+}
+
+input:focus {
+    border-color: purple;
+    
+}
+
+a ::before {
+    content: "navigation links";
+    color: red;
+}
+p ::after {
+    content: " - end of paragraph";
+    color: yellow;
 }
